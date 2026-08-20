@@ -1,69 +1,12 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Image from"next/image";import Link from"next/link";import{Arrow,WhatsApp}from"@/components/icons";import{ServiceCard}from"@/components/service-card";import{services,site,testimonials}from"@/config/site";import{buildWhatsAppUrl}from"@/utils/contact";
+export default function Home(){return <main>
+<section className="hero"><Image src="/images/isabella-hero.webp" alt="Isabella Mazzoni em seu espaço de atendimento" fill priority sizes="100vw" className="hero-image"/><div className="hero-overlay"/><div className="container hero-content"><span className="eyebrow">Estética corporal · Santo André</span><h1>Seu corpo pede<br/><em>cuidado,</em> não cobrança.</h1><p>Atendimentos personalizados para aliviar o inchaço, relaxar e fazer você se sentir ainda melhor no próprio corpo.</p><div className="hero-actions"><a className="button button-primary" href={buildWhatsAppUrl("uma drenagem linfática")} target="_blank" rel="noreferrer"><WhatsApp/> Agendar pelo WhatsApp</a><Link className="button button-ghost" href="/servicos">Ver serviços</Link></div><div className="hero-note"><span>Atendimento personalizado</span><span>Terça a sábado</span><span>Santa Maria, Santo André</span></div></div></section>
+<section className="section intro"><div className="container intro-grid"><div><span className="eyebrow burgundy">Cuidado com propósito</span><h2>Leveza que você sente.<br/>Cuidado que respeita você.</h2></div><div><p>Mais do que uma técnica, cada atendimento começa com escuta. Entendo suas necessidades e objetivos para oferecer uma experiência individual, segura e acolhedora.</p><a className="text-link" href="#sobre">Conheça a Isabella <Arrow/></a></div></div></section>
+<section className="section featured-service"><div className="container feature-grid"><div className="feature-visual"><span>leveza</span><div>Atendimento<br/><strong>individual</strong></div></div><div className="feature-copy"><span className="eyebrow">Experiência em destaque</span><h2>Drenagem<br/><em>Linfática</em></h2><p>Uma pausa para aliviar a sensação de inchaço, pernas pesadas e retenção de líquidos — com movimentos suaves e atenção ao que seu corpo precisa.</p><ul><li>Sensação de leveza e bem-estar</li><li>Cuidado ajustado às suas necessidades</li><li>Ambiente acolhedor e profissional</li></ul><a className="button button-light" href={buildWhatsAppUrl("uma drenagem linfática")} target="_blank" rel="noreferrer">Agendar drenagem <Arrow/></a></div></div></section>
+<section className="section services" id="servicos"><div className="container"><div className="section-heading"><div><span className="eyebrow burgundy">Experiências de cuidado</span><h2>Escolha o seu momento</h2></div><p>Valores transparentes para você escolher o cuidado que combina com seu momento.</p></div><div className="service-grid">{services.slice(0,3).map(s=><ServiceCard key={s.slug} service={s}/>)}</div><div className="center"><Link className="button button-outline" href="/servicos">Ver todos os serviços e valores <Arrow/></Link></div></div></section>
+<section className="section about" id="sobre"><div className="container about-grid"><div className="about-image-wrap"><Image src="/images/isabella-original.webp" alt="Retrato original de Isabella Mazzoni" fill sizes="(max-width: 800px) 100vw, 45vw" className="about-image"/><span className="about-stamp">3 anos<small>cuidando de mulheres</small></span></div><div className="about-copy"><span className="eyebrow burgundy">Sobre mim</span><h2>Ciência, técnica<br/>e um olhar <em>humano.</em></h2><p>Escolhi a Biomedicina por acreditar na importância da ciência e do cuidado. Ao longo da minha formação, encontrei na estética uma verdadeira paixão.</p><p>Há 3 anos venho construindo minha trajetória nessa área, com cursos e certificações em técnicas de massagens e estética corporal, sempre aprimorando meus conhecimentos para oferecer atendimentos personalizados.</p><blockquote>“Cada cliente é única. Meu papel é entender o que realmente incomoda e criar um cuidado que faça sentido para ela.”</blockquote></div></div></section>
+<section className="section testimonials" id="depoimentos"><div className="container"><div className="section-heading"><div><span className="eyebrow">Experiências reais</span><h2>O cuidado também<br/>se revela no sentir.</h2></div><p>Relatos espontâneos de clientes que viveram essa experiência.</p></div><div className="testimonial-track">{testimonials.map((t,i)=><article className="testimonial" key={i}><div className="stars">★★★★★</div><p>“{t.quote}”</p><span>{t.label}</span></article>)}</div><small className="results-note">As experiências são individuais e os resultados podem variar.</small></div></section>
+<section className="section location" id="contato"><div className="container location-grid"><div><span className="eyebrow burgundy">Seu momento de cuidado</span><h2>Visite o espaço</h2><div className="info-block"><small>Endereço</small><p>{site.address}</p><a className="text-link" href={site.mapsUrl} target="_blank" rel="noreferrer">Abrir no Google Maps <Arrow/></a></div><div className="info-block"><small>Horários</small>{site.hours.map(h=><p key={h}>{h}</p>)}</div><a className="button button-primary" href={buildWhatsAppUrl()} target="_blank" rel="noreferrer"><WhatsApp/> Agendar atendimento</a></div><a className="map-card" href={site.mapsUrl} target="_blank" rel="noreferrer"><div className="map-lines"/><span className="map-pin">IM</span><div><strong>Santa Maria</strong><small>Santo André · SP</small></div></a></div></section>
+<section className="section faq"><div className="container faq-grid"><div><span className="eyebrow burgundy">Dúvidas frequentes</span><h2>Antes de agendar</h2></div><div>{[["Como faço para agendar?","O agendamento é feito diretamente pelo WhatsApp. Você escolhe o serviço e combina o melhor horário com a Isabella."],["Qual atendimento escolher?","Conte como você está se sentindo e seus objetivos. A Isabella orientará a experiência mais adequada."],["Existem pacotes?","Sim. Todos os serviços possuem opção de pacote com quatro sessões."],["Onde fica o espaço?","Na Rua Comendador Antônio Benvenuto Bataglia, 394, Santa Maria, Santo André."]].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></div></section>
+<section className="final-cta"><div className="container"><span className="eyebrow">Seu corpo merece atenção</span><h2>Que tal reservar um<br/><em>momento para você?</em></h2><p>Fale com a Isabella e encontre o cuidado ideal para o seu momento.</p><a className="button button-light" href={buildWhatsAppUrl()} target="_blank" rel="noreferrer"><WhatsApp/> Conversar pelo WhatsApp</a></div></section>
+</main>}

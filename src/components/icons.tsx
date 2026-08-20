@@ -1,0 +1,4 @@
+type P={className?:string};
+export const Arrow=({className=""}:P)=><svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>;
+export const MenuIcon=({className=""}:P)=><svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>;
+export const WhatsApp=({className=""}:P)=><svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" stroke="currentColor" strokeWidth="1.7"/><path d="M9 8.5c.3 3 2 4.7 5 5l1-1.3 2 .9c-.2 1.6-1.1 2.4-2.7 2.4-3.7-.5-6.3-3.1-6.8-6.8C7.5 7.1 8.3 6.2 9.9 6l.9 2-1.8.5Z" fill="currentColor"/></svg>;

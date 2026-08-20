@@ -1,0 +1,2 @@
+import{describe,expect,it}from"vitest";import{buildWhatsAppUrl,formatCurrency}from"./contact";
+describe("contact",()=>{it("gera URL com telefone e mensagem do serviço",()=>{const url=buildWhatsAppUrl("Drenagem Linfática","site");expect(url).toContain("https://wa.me/5511911583753");expect(decodeURIComponent(url)).toContain("Drenagem Linfática")});it("formata preços em real",()=>{expect(formatCurrency(70)).toMatch(/R\$\s70,00/)})});
