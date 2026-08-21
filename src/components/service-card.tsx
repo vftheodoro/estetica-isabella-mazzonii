@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Service } from "@/types/site";
 import {
   Arrow,
+  Clock,
   Droplet,
   Face,
   Heart,
@@ -51,6 +52,9 @@ export function ServiceCard({ service }: { service: Service }) {
 
       <div className="service-body">
         <h3>{service.title}</h3>
+        <span className="duration-tag">
+          <Clock /> {service.duration ?? "1 hora"}
+        </span>
         <p>{service.description}</p>
         <ul>
           {service.benefits.map((b) => (

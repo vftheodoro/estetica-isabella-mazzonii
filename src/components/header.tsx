@@ -32,8 +32,8 @@ export function Header() {
           <Link href="/#depoimentos" onClick={() => setOpen(false)}>
             Depoimentos
           </Link>
-          <Link href="/#instagram" onClick={() => setOpen(false)}>
-            Instagram
+          <Link href="/#espaco" onClick={() => setOpen(false)}>
+            Espaço
           </Link>
           <Link href="/#contato" onClick={() => setOpen(false)}>
             Contato

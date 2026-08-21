@@ -5,7 +5,6 @@ import {
   Calendar,
   Check,
   Clock,
-  Droplet,
   Hands,
   Heart,
   MapPin,
@@ -15,7 +14,6 @@ import {
   WhatsApp,
 } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
-import { InstagramFeed } from "@/components/instagram-feed";
 import { ServiceCard } from "@/components/service-card";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { services, site, testimonials } from "@/config/site";
@@ -45,7 +43,7 @@ export default function Home() {
     <main>
       <section className="hero">
         <Image
-          src="/images/isabella-hero.webp"
+          src="/images/isabella-hero.png"
           alt="Isabella Mazzoni em seu espaço de atendimento"
           fill
           priority
@@ -128,20 +126,13 @@ export default function Home() {
         <div className="container feature-grid">
           <Reveal className="feature-visual">
             <Image
-              src="/images/drenagem-linfatica.jpg"
+              src="/images/drenagem-hero.png"
               alt="Sessão de drenagem linfática"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
               className="feature-image"
             />
             <div className="feature-visual-shade" />
-            <div className="feature-tag">
-              <Droplet />
-              <span>
-                Experiência
-                <strong>em destaque</strong>
-              </span>
-            </div>
           </Reveal>
           <Reveal className="feature-copy" delay={140}>
             <span className="eyebrow">Mais procurado</span>
@@ -205,8 +196,8 @@ export default function Home() {
         <div className="container about-grid">
           <Reveal className="about-image-wrap">
             <Image
-              src="/images/isabella-original.webp"
-              alt="Retrato original de Isabella Mazzoni"
+              src="/images/isabella-portrait.png"
+              alt="Retrato profissional de Isabella Mazzoni"
               fill
               sizes="(max-width: 800px) 100vw, 45vw"
               className="about-image"
@@ -264,7 +255,46 @@ export default function Home() {
         </div>
       </section>
 
-      <InstagramFeed />
+      <section className="section studio" id="espaco">
+        <div className="container studio-grid minimal">
+          <Reveal>
+            <span className="eyebrow burgundy">O espaço</span>
+            <h2>Um ambiente pensado para você relaxar.</h2>
+            <p>
+              O atendimento acontece em um ambiente tranquilo, acolhedor e com atenção nos mínimos
+              detalhes para que você se sinta em segurança e bem à vontade do começo ao fim.
+            </p>
+            <div className="studio-points">
+              <span>Ambiente discreto</span>
+              <span>Atendimento individual</span>
+              <span>Conforto real</span>
+            </div>
+            <a
+              className="button button-primary"
+              href={buildWhatsAppUrl()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <WhatsApp /> Agendar atendimento
+            </a>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="studio-photo-panel">
+              <Image
+                src="/images/local-trabalho.png"
+                alt="Espaço real de atendimento da Isabella Mazzoni"
+                fill
+                sizes="(max-width: 800px) 100vw, 50vw"
+                className="studio-photo"
+              />
+              <div className="studio-photo-overlay">
+                <p className="studio-panel-label">Santa Maria</p>
+                <p className="studio-panel-title">Santo André · SP</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="section location" id="contato">
         <div className="container location-grid">
@@ -295,22 +325,6 @@ export default function Home() {
               rel="noreferrer"
             >
               <WhatsApp /> Agendar atendimento
-            </a>
-          </Reveal>
-          <Reveal delay={120}>
-            <a className="map-card" href={site.mapsUrl} target="_blank" rel="noreferrer">
-              <Image
-                src="/images/espaco-atendimento.jpg"
-                alt="Espaço de atendimento da Estética Isabella Mazzoni"
-                fill
-                sizes="(max-width: 800px) 100vw, 50vw"
-                className="map-image"
-              />
-              <div className="map-shade" />
-              <div className="map-caption">
-                <strong>Santa Maria</strong>
-                <small>Santo André · SP</small>
-              </div>
             </a>
           </Reveal>
         </div>
