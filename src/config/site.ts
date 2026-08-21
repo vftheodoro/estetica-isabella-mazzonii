@@ -21,7 +21,7 @@ export const services: Service[] = [
     price: 70,
     packagePrice: 265,
     featured: true,
-    image: "/images/drenagem-linfatica.jpg",
+    image: "/images/drenagem-linfatica.png",
     icon: "droplet",
   },
   {
@@ -80,7 +80,7 @@ export const services: Service[] = [
 export const instagramPosts: InstagramPost[] = [
   {
     id: "drenagem",
-    image: "/images/drenagem-linfatica.jpg",
+    image: "/images/drenagem-linfatica.png",
     caption: "Drenagem linfática para aliviar o inchaço e recuperar a leveza no corpo.",
     tag: "Drenagem",
   },
