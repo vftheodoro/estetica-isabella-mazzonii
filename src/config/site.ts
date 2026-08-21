@@ -72,6 +72,7 @@ export const services: Service[] = [
     duration: "35 min",
     price: 45,
     packagePrice: 170,
+    image: "/images/massagem-express.png",
     icon: "zap",
   },
 ];
