@@ -48,7 +48,15 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="hero-image"
+          className="hero-image hero-image-desktop"
+        />
+        <Image
+          src="/images/isabella-portrait.png"
+          alt="Isabella Mazzoni em seu espaço de atendimento"
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image hero-image-mobile"
         />
         <div className="hero-overlay" />
         <div className="container hero-content">
