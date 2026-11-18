@@ -1,18 +1,45 @@
-# Estética Isabella Mazzoni
+# Estética Isabella Mazzoni — Site Institucional
 
-Site institucional mobile-first para apresentar serviços, preços e depoimentos e gerar agendamentos pelo WhatsApp.
+Site institucional responsivo para apresentar serviços de estética, informações do estabelecimento e formas de contato, com chamadas de agendamento via WhatsApp. O projeto utiliza Next.js e conteúdo configurável.
 
-## Stack
+## Tecnologias
 
-- Next.js App Router, React e TypeScript
-- Tailwind CSS 4 e CSS responsivo
-- Metadata, sitemap, robots e JSON-LD para SEO local
+- Next.js App Router, React e TypeScript.
+- Tailwind CSS e estilos responsivos.
+- Metadados, `sitemap`, `robots` e dados estruturados para SEO.
+- Vitest para testar utilitários relacionados a contato.
 
-## Desenvolvimento
+## Organização do código
+
+| Caminho | Função |
+| --- | --- |
+| `src/app` | Páginas, layout, política de privacidade, termos e SEO |
+| `src/components` | Interface, navegação, serviços, depoimentos e contato |
+| `src/config/site.ts` | Dados e textos configuráveis do estabelecimento |
+| `src/utils/contact.ts` | Lógica utilitária de contato, com teste correspondente |
+| `public` | Arquivos estáticos e imagens |
+
+## Executar localmente
 
 ```bash
-npm install
+git clone https://github.com/vftheodoro/estetica-isabella-mazzonii.git
+cd estetica-isabella-mazzonii
+npm ci
 npm run dev
 ```
 
-Conteúdo, contatos, serviços e preços ficam centralizados em `src/config/site.ts`. Credenciais profissionais não confirmadas permanecem omitidas até validação documental.
+Abra http://localhost:3000.
+
+## Qualidade e publicação
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
+Antes do deploy, confira nomes, serviços, preços, WhatsApp, depoimentos e imagens autorizados em `src/config/site.ts` e componentes relacionados. Revisar também privacidade, termos e metadados.
+
+## Escopo e cuidados
+
+O repositório documenta o site institucional; não indica existência de sistema próprio de agenda ou prontuário. Credenciais, qualificações profissionais e avaliações não verificadas não devem ser apresentadas como fatos. As imagens e a identidade visual de terceiros não estão disponíveis para reutilização sem autorização. Não há uma licença open source indicada neste repositório.
